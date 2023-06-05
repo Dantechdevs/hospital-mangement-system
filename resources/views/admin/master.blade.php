@@ -444,6 +444,8 @@
                         </div>
                       </div>
                     </div>
+                    @include('admin.layouts.success')
+                    @include('admin.layouts.danger')
                     @yield('content')
                     @yield('name')
                   </div>
