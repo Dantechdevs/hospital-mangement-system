@@ -1,6 +1,7 @@
 <?php
-use App\Http\Controllers\DoctorController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DoctorController;
+use App\Http\Controllers\departments\DepartmentsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,3 +27,5 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+Route::resource('departments', DepartmentsController::class);

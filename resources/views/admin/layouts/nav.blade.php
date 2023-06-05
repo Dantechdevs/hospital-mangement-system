@@ -19,5 +19,14 @@
             
         
        
+
+
+          <li class="nav-item nav-category"></li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('departments.index')}}">
+              <i class="mdi mdi-grid-large menu-icon"></i>
+              <span class="menu-title">Departments</span>
+            </a>
+          </li>
         </ul>
       </nav>
