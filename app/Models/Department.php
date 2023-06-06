@@ -15,4 +15,14 @@ class Department extends Model
         'block_id',
         'hod_id', 
     ];
+    public function block()
+    {
+        return $this->belongsTo(Block::class);
+    }
+
+   
+    public function hod()
+    {
+        return $this->hasOne(Hod::class);
+    }
 }

@@ -2,6 +2,12 @@
 use App\Http\Controllers\DoctorController;
 use Illuminate\Support\Facades\Route;
 
+
+
+
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,3 +32,7 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+
+
+
