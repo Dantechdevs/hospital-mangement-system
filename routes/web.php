@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\DoctorController;
+use App\Http\Controllers\NursesController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -7,6 +8,9 @@ use Illuminate\Support\Facades\Route;
 
 
 
+use App\Http\Controllers\block\BlocksController;
+use App\Http\Controllers\departments\DepartmentsController;
+use App\Http\Controllers\hod\HodController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,6 +23,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::resource('doctors', DoctorController::class);
+Route::resource('nurses',NursesController::class);
 Route::get('/', function () {
     return view('welcome');
 });
@@ -36,3 +41,10 @@ Route::middleware([
 
 
 
+
+
+
+
+Route::resource('hods', HodController::class);
+Route::resource('departments', DepartmentsController::class);
+Route::resource('blocks', BlocksController::class);
