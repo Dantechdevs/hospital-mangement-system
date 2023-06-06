@@ -3,6 +3,15 @@ use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\NursesController;
 use Illuminate\Support\Facades\Route;
 
+
+
+
+
+
+use App\Http\Controllers\block\BlocksController;
+use App\Http\Controllers\departments\DepartmentsController;
+use App\Http\Controllers\hod\HodController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,3 +37,14 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+
+
+
+
+
+
+
+Route::resource('hods', HodController::class);
+Route::resource('departments', DepartmentsController::class);
+Route::resource('blocks', BlocksController::class);
