@@ -27,6 +27,15 @@
               <span class="menu-title">Nurses Information</span>
             </a>
           </li>
+
+          <li class="nav-item">
+            
+            <a class="nav-link" href="{{route('medicines.index')}}">
+            <i class="mdi mdi-grid-large menu-icon"></i>
+            
+            <span class="menu-title">Medicine Details</span>
+          </a>
+        </li>
          
             
         

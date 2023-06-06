@@ -1,5 +1,6 @@
 <?php
 use App\Http\Controllers\DoctorController;
+use App\Http\Controllers\MedicineController;
 use App\Http\Controllers\NursesController;
 use Illuminate\Support\Facades\Route;
 
@@ -15,6 +16,8 @@ use Illuminate\Support\Facades\Route;
 */
 Route::resource('doctors', DoctorController::class);
 Route::resource('nurses',NursesController::class);
+Route::resource('medicines',MedicineController::class);
+
 Route::get('/', function () {
     return view('welcome');
 });
