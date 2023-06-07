@@ -62,7 +62,7 @@
 
                          <div class="form-group">
                              <label for="Description">Description</label>
-                             <textarea name="description" id="" cols="30" rows="10" name="description" class="form-control">
+                             <textarea name="description" id="editor" cols="30" rows="10" name="description" class="form-control">
 
                    </textarea id="editor">
                              @error('description')
