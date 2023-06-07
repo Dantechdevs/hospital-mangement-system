@@ -1,4 +1,4 @@
-@if ($message = Session::get('success'))
+@if ($message = Session::get('danger'))
 <div class="alert alert-danger">
     <p>{{ $message }}</p>
 </div>
