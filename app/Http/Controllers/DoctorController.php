@@ -69,6 +69,7 @@ class DoctorController extends Controller
         $doctor->update($request->all());
         return redirect()->route('doctors.index')
                         ->with('success','Doctor updated successfully');
+                        
     }
 
     /**
