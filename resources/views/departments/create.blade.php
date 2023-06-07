@@ -2,6 +2,8 @@
 
 
      @section('content')
+     <script src="https://cdn.ckeditor.com/ckeditor5/38.0.1/classic/ckeditor.js"></script>
+
          <?php //dd($blockids);
          ?>
 
@@ -62,7 +64,7 @@
                              <label for="Description">Description</label>
                              <textarea name="description" id="" cols="30" rows="10" name="description" class="form-control">
 
-                   </textarea>
+                   </textarea id="editor">
                              @error('description')
                                  <span style="color:red !important;">{{ $message }}</span>
                              @enderror
@@ -75,4 +77,11 @@
                  </div>
              </div>
          </div>
+         <script>
+            ClassicEditor
+                .create( document.querySelector( '#editor' ) )
+                .catch( error => {
+                    console.error( error );
+                } );
+        </script>
      @endsection
