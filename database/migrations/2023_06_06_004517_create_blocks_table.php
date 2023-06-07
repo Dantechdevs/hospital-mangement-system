@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('blocks', function (Blueprint $table) {
             $table->id();
-            $table->unsignedInteger('blockfloor');
+            $table->string('blockfloor');
             $table->unsignedInteger('blockcode');
             $table->timestamps();
         });

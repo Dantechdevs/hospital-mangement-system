@@ -6,6 +6,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>{{ config('app.name', 'Laravel') }} </title>
+     <!-- Scripts -->
+     @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+     <!-- Styles -->
+     @livewireStyles
   <!-- plugins:css -->
   <link rel="stylesheet" href="{{asset('admin/template/vendors/feather/feather.css')}}">
   <link rel="stylesheet" href="{{asset('admin/template/vendors/mdi/css/materialdesignicons.min.css')}}">
@@ -21,11 +26,7 @@
   <!-- inject:css -->
   <link rel="stylesheet" href="{{asset('admin/template/css/vertical-layout-light/style.css')}}">
   <!-- endinject -->
-   <!-- Scripts -->
-	 @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-	 <!-- Styles -->
-	 @livewireStyles
   <link rel="shortcut icon" href="images/favicon.png" />
 </head>
 <body>
@@ -447,7 +448,7 @@
                     @include('admin.layouts.success')
                     @include('admin.layouts.danger')
                     @yield('content')
-                    @yield('name')
+                   
                   </div>
                 </div>
               </div>

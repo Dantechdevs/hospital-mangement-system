@@ -16,8 +16,8 @@ return new class extends Migration
             $table->string('name');
             $table->text('description');
             $table->string('photo_path');
-            $table->foreignId('hod_id')->constrained();
-            $table->foreignId('block_id')->constrained();
+            $table->foreignId('hod_id')->index()->constrained()->cascadeOnDelete();
+            $table->foreignId('block_id')->index()->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
     }

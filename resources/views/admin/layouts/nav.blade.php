@@ -26,7 +26,13 @@
               
               <span class="menu-title">Nurses Information</span>
             </a>
+
           </li>
+
+
+
+
+
 
           <li class="nav-item">
             
@@ -36,18 +42,35 @@
             <span class="menu-title">Medicine Details</span>
           </a>
         </li>
+
          
             
         
        
 
 
-          <li class="nav-item nav-category"></li>
+          <li class="nav-item nav-category">Departments</li>
           <li class="nav-item">
             <a class="nav-link" href="{{route('departments.index')}}">
-              <i class="mdi mdi-grid-large menu-icon"></i>
-              <span class="menu-title">Departments</span>
+              <i class="menu-icon mdi mdi-animation "></i>
+              <span class="menu-title">Departments Information</span>
             </a>
           </li>
+
+          <li class="nav-item nav-category">Blocks</li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('blocks.index')}}">
+              <i class="menu-icon  mdi mdi-application"></i>
+              <span class="menu-title">Blocks Information</span>
+            </a>
+          </li>
+          <li class="nav-item nav-category">Head of Deparment</li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('blocks.index')}}">
+              <i class="menu-icon mdi mdi-account-card-details "></i>
+              <span class="menu-title">Hod Information</span>
+            </a>
+          </li>
+
         </ul>
       </nav>
