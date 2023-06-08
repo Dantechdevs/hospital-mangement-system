@@ -44,7 +44,7 @@ class DepartmentsController extends Controller
         $request->validate([
             'name' => 'required|max:30',
             'description' => 'required',
-            'hodid' => 'required|numeric|unique:departments,hod_id,except,id',
+            'hodid' => 'required|numeric|',
             'blockid' => 'required|numeric',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             ]);
@@ -99,7 +99,7 @@ class DepartmentsController extends Controller
         $request->validate([
             'name' => 'required|max:30',
             'description' => 'required',
-            'hodid' => 'required|numeric|unique:departments,hod_id,except,id',
+            'hodid' => 'required|numeric',
             'blockid' => 'required|numeric',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             ]);
@@ -109,7 +109,7 @@ class DepartmentsController extends Controller
             $department->update([
                 'name'        => $request->name,
                 'block_id'   => $request->blockid,
-                'description' => $request->descriptions,
+                'description' => $request->description,
                 'hod_id' => $request->hodid,
                 'photo_path'  => $imageName,
             ]);

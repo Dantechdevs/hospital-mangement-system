@@ -16,8 +16,12 @@ return new class extends Migration
             $table->string('name');
             $table->text('description');
             $table->string('photo_path');
-            $table->foreignId('hod_id')->index()->constrained()->cascadeOnDelete();
-            $table->foreignId('block_id')->index()->constrained()->cascadeOnDelete();
+            $table->foreignId('hod_id')->constrand();
+            $table->foreignId('block_id')->constrand();
+           // $table->unsignedBigInteger('hod_id');
+           // $table->unsignedBigInteger('block_id');
+           // $table->foreign('hod_id')->references('doctor_id')->on('hods')->cascadeOnDelete();
+           // $table->foreign('block_id')->references('blockcode')->on('blocks')->cascadeOnDelete();
             $table->timestamps();
         });
     }

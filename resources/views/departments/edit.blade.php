@@ -12,13 +12,14 @@
                 <p class="card-description">
                     <a href="{{ route('departments.index') }}" class="btn btn-success">Back</a>
                 </p>
-                <form class="forms-sample" enctype="multipart/form-data" action="{{ route('departments.store',$department->id ) }}" method="post">
+                <form class="forms-sample" enctype="multipart/form-data" action="{{ route('departments.update',$department->id ) }}" method="post">
                     @csrf
+                    @method('put')
 
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" class="form-control" name="name" id="name"
-                            value="{{ $department->name ?? olde('name') }}">
+                            value="{{ $department->name ?? old('name') }}">
                         @error('name')
                             <span style="color:red !important;">{{ $message }}</span>
                         @enderror
@@ -52,7 +53,8 @@
 
                     <div class="form-group">
                         <label for="image">Department Image</label>
-                        <input type="file" class="form-control" id="name" value="{{ old('image') }}">
+                        <input type="file" class="form-control" id="name" name="image" value="{{ old('image') }}">
+                        <img src="{{asset('department/images'.'/'.$department->photo_path )}}" alt="" srcset="">
                         @error('image')
                             <span style="color:red !important;">{{ $message }}</span>
                         @enderror
@@ -65,8 +67,8 @@
 
                     <div class="form-group">
                         <label for="Description">Description</label>
-                        <textarea name="description" id="" cols="30" rows="10" name="description" class="form-control">
-{{ $department->description }}
+                        <textarea name="description" id="" cols="30" rows="10" name="description" class="form-control" value="{{ $department->description }}">
+
               </textarea>
                         @error('description')
                             <span style="color:red !important;">{{ $message }}</span>
@@ -74,8 +76,10 @@
                     </div>
 
 
-                    <button type="submit" class="btn btn-success me-2">update</button>
-                    <a href="{{ route('departments.index') }}" class="btn btn-light">Cancel</a>
+               <div class="container">
+                <button type="submit" class="btn btn-success me-2">update</button>
+                <a href="{{ route('departments.index') }}" class="btn btn-light">Cancel</a>
+               </div>
                 </form>
             </div>
         </div>

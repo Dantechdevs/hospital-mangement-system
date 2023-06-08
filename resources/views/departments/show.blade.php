@@ -2,36 +2,71 @@
 
 
      @section('content')
+         {{-- show --}}
+         <div class="col-lg-12 grid-margin stretch-card">
+             <div class="card">
+                 <div class="card-body">
+                     <h4 class="card-title"><span style="color:orange; font-weight: bold;">Department
+                             Name:</span>{{ $department->name }} Details</h4>
+                     <a href="{{ route('blocks.index') }}" class="btn btn-primary">Back</a>
+                     <div class="table-responsive col-lg-12">
+                         <table class="table">
+                             <thead>
+                                 <tr>
+                                     <th>
+                                         Image
+                                     </th>
+                                    
+                                     <th>Edit</th>
+                                     <th>Delete</th> 
+                                    
+                                 </tr>
+                             </thead>
+                             <tbody>
 
-        <div class="col-md-12 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title" ><span style="color:orange; font-weight: bold;">Department Name:</span>{{ $department->name }}</h4>
-                  <div class="media">
-                   
-                    <div class="media-body">
-                    	<img width="50px" height="50px" src="{{ asset(  $department->photo_path) }}" alt="">
-                      <p class="card-text">
-                      	{{ $department->description }}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-                <div class="row">
-                	<div class="col-md-6 d-flex ">
-                		 <a class=" btn btn-primary  " href="{{route('departments.edit',$department->id) }}">Edit</a> 
-                		 <form action="{{ route('departments.destroy',$department->id)}}" method="POST" >
-                               @csrf
-                              @method('DELETE')
-                                     <input  type="submit" value="Delete!" class="btn btn-danger">
-                               </form>
-                	</div>
-                	<div class="col-md-6 ">
-                		 
-                               <span style="color:orange; font-weight: bold;">Created On:</span>{{ $department->created_at }}
-                	</div>
-                	
-                </div>
-              </div>
-            </div>
+
+                                 <tr>
+
+
+                                     <td>
+                                         <img width="50px" height="50px"
+                                             src="{{ asset('department/images' . '/' . $department->photo_path) }}"
+                                             alt="">
+                                     </td>
+
+                                     <td>
+                                         <a class=" btn btn-primary  "
+                                             href="{{ route('departments.edit', $department->id) }}">Edit</a>
+                                     </td>
+                                     <td>
+                                         <form action="{{ route('departments.destroy', $department->id) }}" method="POST">
+                                             @csrf
+                                             @method('DELETE')
+                                             <input type="submit" value="Delete!" class="btn btn-danger">
+                                         </form>
+                                     </td>
+                                     
+                                     <td>
+                                     
+                                  </td>
+                                 </tr>
+
+                             </tbody>
+
+                         </table>
+                         <div class="container">
+                          <strong>
+                            Description
+                          </strong>
+                          <p >
+                            {{ $department->description }} <br>
+                        </p>
+                         </div>
+
+                     </div>
+                 </div>
+             </div>
+         </div>
+         </div>
+         </div>
      @endsection

@@ -66,7 +66,7 @@
           </li>
           <li class="nav-item nav-category">Head of Deparment</li>
           <li class="nav-item">
-            <a class="nav-link" href="{{route('blocks.index')}}">
+            <a class="nav-link" href="{{route('hods.index')}}">
               <i class="menu-icon mdi mdi-account-card-details "></i>
               <span class="menu-title">Hod Information</span>
             </a>

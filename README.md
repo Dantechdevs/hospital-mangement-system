@@ -1,5 +1,5 @@
 #  Hospital (Hospital Management System)
-This is a complete hospital managemnt system written in php Framework (Laravel 10)
+This is a complete hospital managemnt system written in php Laravel Framework (Laravel 10)
 
 ## This has the following features
 * Patient Management
