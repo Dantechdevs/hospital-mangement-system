@@ -30,7 +30,7 @@
                              <label for="hod">Hod Id</label>
                              <select name="hodid" id="" class="form-control">
                                  @foreach ($hods as $hod)
-                                     <option value="{{ $hod->doctor_id }}">{{ $hod->doctor_id }}</option>
+                                     <option value="{{ $hod->doctor_id }}">{{ $hod->doctor->name }}</option>
                                  @endforeach
                              </select>
                              @error('hodid')
@@ -38,7 +38,7 @@
                              @enderror
                          </div>
                          <div class="form-group">
-                             <label for="image">Block Id</label>
+                             <label for="image">Block Code</label>
                              <select name="blockid" id="" class="form-control">
 
                                  @foreach ($blockids as $blockid)
@@ -62,7 +62,7 @@
 
                          <div class="form-group">
                              <label for="Description">Description</label>
-                             <textarea name="description" id="editor" cols="30" rows="10" name="description" class="form-control">
+                             <textarea name="description" id="editor" cols="30" rows="10" name="description">
 
                    </textarea id="editor">
                              @error('description')
@@ -71,8 +71,10 @@
                          </div>
 
 
-                         <button type="submit" class="btn btn-primary me-2">Create</button>
-                         <a href="{{ route('departments.index') }}" class="btn btn-light">Cancel</a>
+                        <div class="container">
+                            <button type="submit" class="btn btn-primary me-2">Create</button>
+                            <a href="{{ route('departments.index') }}" class="btn btn-light">Cancel</a>
+                        </div>
                      </form>
                  </div>
              </div>

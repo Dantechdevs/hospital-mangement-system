@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\hod;
 
-use App\Http\Controllers\Controller;
+use App\Models\hod\Hod;
+use App\Models\Department;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Models\Doctor;
 
 class HodController extends Controller
 {
@@ -13,6 +16,12 @@ class HodController extends Controller
     public function index()
     {
         //
+
+        $hods=Hod::with(['department','doctor'])->latest()->paginate(5);
+        return view('hods.index',[
+            'hods'=>$hods,
+        ]);
+
     }
 
     /**
@@ -21,6 +30,10 @@ class HodController extends Controller
     public function create()
     {
         //
+        $doctors=Doctor::all();
+        return view('hods.create',[
+            'doctors'=>$doctors
+        ]);
     }
 
     /**
@@ -29,6 +42,16 @@ class HodController extends Controller
     public function store(Request $request)
     {
         //
+        $request->validate([
+            'doctor' => 'required|numeric|unique:hods,doctor_id,except,id',
+            ]);
+            
+        Hod::create([
+            'doctor_id'         => $request->doctor,
+        ]);
+        return redirect()->route('hods.index')
+        ->with('success','Hod  Created successfully');
+       
     }
 
     /**
@@ -37,6 +60,11 @@ class HodController extends Controller
     public function show(string $id)
     {
         //
+        $hod=Hod::findOrFail($id);
+      //  $hodp=Hod::whereBelongsTo('department')->get();
+        return view('hods.show',[
+            'hod'=>$hod,
+        ]);
     }
 
     /**
@@ -45,6 +73,10 @@ class HodController extends Controller
     public function edit(string $id)
     {
         //
+        $doctor=Doctor::findOrFail($id);
+        return view('hods.edit',[
+            'doctor'=>$doctor
+        ]);
     }
 
     /**
@@ -53,6 +85,15 @@ class HodController extends Controller
     public function update(Request $request, string $id)
     {
         //
+        $request->validate([
+            'doctor' => 'required|numeric|unique:hods,doctor_id,except,id',
+            ]);
+            $hod=Doctor::findOrFail($id);
+        $hod->update([
+            'doctor_id'         => $request->doctor,
+        ]);
+        return redirect()->route('hods.index')
+        ->with('success','Hod  updated successfully');
     }
 
     /**
@@ -61,5 +102,9 @@ class HodController extends Controller
     public function destroy(string $id)
     {
         //
+        $hod=Hod::findOrFail($id);
+        $hod->delete();
+        return redirect()->route('hods.index')
+                        ->with('danger','Hod  deleted successfully');
     }
 }

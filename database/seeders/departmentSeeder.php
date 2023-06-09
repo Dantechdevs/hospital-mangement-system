@@ -19,8 +19,8 @@ class departmentSeeder extends Seeder
                 'name'          => 'Department',
                 'description'   => "department detail Lorem Ipsum is simply dummy text of the printing Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley not only five centuries,' ",
                 'photo_path'    => '/images/department.jpg',
-                'hod_id'    => 1,
-                'block_id'    => 1,
+                'hod_id'    => 5,
+                'block_id'    => 4,
             ]); 
         }
         
