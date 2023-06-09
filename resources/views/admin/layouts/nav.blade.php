@@ -10,6 +10,29 @@
               
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('admin.roles.index')}}">
+              <i class="menu-icon mdi mdi-account-remove "></i>
+              <span class="menu-title">Roles</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('admin.permissions.index')}}">
+              <i class="menu-icon mdi mdi-account-key "></i>
+              <span class="menu-title">Permissions</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('admin.users.index')}}">
+              <i class="menu-icon mdi mdi-account-box-outline "></i>
+              <span class="menu-title">Users</span>
+            </a>
+          </li>
+
+
+
+
+
           <li class="nav-item nav-category">Doctors</li>
           <li class="nav-item">
             <a class="nav-link" href="{{route('doctors.index')}}">
@@ -71,6 +94,7 @@
               <span class="menu-title">Hod Information</span>
             </a>
           </li>
-
+         
+         
         </ul>
       </nav>
