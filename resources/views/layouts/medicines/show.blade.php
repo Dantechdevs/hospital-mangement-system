@@ -13,8 +13,8 @@
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Name:</strong>
-                {{ $nmedicine->name }}
+                <strong>Id:</strong>
+                {{ $medicine->name }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -23,6 +23,20 @@
                 <strong>Price:</strong>
                 {{ $medicine->detail }}
             </div>
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <span style="color:rgb(62, 0, 128);">Joined on:{{$medicine->created_at}}</span>
+        <div class="form-group">
+            <strong>Quantity:</strong>
+            {{ $medicine->detail }}
+        </div>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12">
+        <span style="color:rgb(62, 0, 128);">Joined on:{{$medicine->created_at}}</span>
+        <div class="form-group">
+            <strong>Code:</strong>
+            {{ $medicine->detail }}
         </div>
     </div>
 @endsection
