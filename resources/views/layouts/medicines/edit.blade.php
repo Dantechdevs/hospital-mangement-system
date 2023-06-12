@@ -24,33 +24,32 @@
         @csrf
         @method('PUT')
         <div class="row">
+           
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Id:</strong>
-                    <input type="text" name="name" value="{{ $medicine->name }}" class="form-control" placeholder="Name">
+                <label>Price</label>
+                <input type="text" name="price" id="" value="{{ $medicine->price}}" class="form-control">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Price:</strong>
-                    <textarea class="form-control" style="height:150px" name="detail" placeholder="Detail">{{ $medicine->detail }}</textarea>
+                <label>Quantity</label>
+                <input type="text" name="quantity" id="" value="{{ $medicine->quantity}}" class="form-control">
                 </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Quantity:</strong>
-                    <textarea class="form-control" style="height:150px" name="detail" placeholder="Detail">{{ $medicine->detail }}</textarea>
-                </div>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Code:</strong>
-                    <textarea class="form-control" style="height:150px" name="detail" placeholder="Detail">{{ $medicine->detail }}</textarea>
+                <label>Code</label>
+                <input type="text" name="code" id="" value="{{ $medicine->code}}" class="form-control">
                 </div>
             </div>
            
+           
+        
+          
+           
             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="submit" class="btn btn-success">Update</button>
             </div>
         </div>
     </form>

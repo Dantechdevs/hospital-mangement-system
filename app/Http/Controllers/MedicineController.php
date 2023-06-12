@@ -22,7 +22,7 @@ class MedicineController extends Controller
      */
     public function create()
     {
-        return view('medicines.create');
+        return view('layouts.medicines.create');
     }
 
     /**
@@ -31,7 +31,7 @@ class MedicineController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'id' => 'required',
+           
             'price' => 'required',
             'quantity' => 'required',
             'code' => 'required',
@@ -55,7 +55,7 @@ class MedicineController extends Controller
      */
     public function edit(Medicine $medicine)
     {
-        return view('medicines.edit',compact('medicine'));
+        return view('layouts.medicines.edit',compact('medicine'));
     }
 
     /**
@@ -64,7 +64,7 @@ class MedicineController extends Controller
     public function update(Request $request, Medicine $medicine)
     {
         $request->validate([
-            'id' => 'required',
+           
             'price' => 'required',
             'quantity' => 'required',
             'code' => 'required',

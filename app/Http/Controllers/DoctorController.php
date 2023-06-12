@@ -23,7 +23,7 @@ class DoctorController extends Controller
      */
     public function create()
     {
-        return view('doctors.create');
+        return view('layouts.doctors.create');
     }
 
     /**
@@ -36,7 +36,11 @@ class DoctorController extends Controller
             'detail' => 'required',
             'department' => 'required'
         ]);
-        Doctor::create($request->all());
+        Doctor::create([
+            'name'=>$request->name,
+            'detail'=>$request->detail,
+            'department'=>$request->department,
+        ]);
         return redirect()->route('doctors.index')
                         ->with('success','doctor created successfully.');
     }
@@ -54,7 +58,7 @@ class DoctorController extends Controller
      */
     public function edit(Doctor $doctor)
     {
-        return view('doctors.edit',compact('doctor'));
+        return view('layouts.doctors.edit',compact('doctor'));
     }
 
     /**
@@ -79,6 +83,6 @@ class DoctorController extends Controller
     {
         $doctor->delete();
         return redirect()->route('doctors.index')
-                        ->with('success','Doctor deleted successfully');
+                        ->with('danger','Doctor deleted successfully');
     }
 }

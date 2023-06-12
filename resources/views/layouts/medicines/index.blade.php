@@ -10,6 +10,11 @@
            
             
             <div class="table-responsive">
+              <div class="container">
+                <div class="col-md-12">
+                  <a href="{{route('medicines.create')}}" class="btn btn-primary">Add New</a>
+                </div>
+              </div>
               <table class="table">
                 <thead>
                   <tr>

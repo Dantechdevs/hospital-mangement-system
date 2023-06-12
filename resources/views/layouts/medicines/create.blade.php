@@ -23,28 +23,29 @@
 <form action="{{ route('medicines.store') }}" method="POST">
     @csrf
      <div class="row">
+     
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Id:</strong>
-                <input type="text" name="name" class="form-control" placeholder="Name">
+              <label for="price">price</label>
+               <input type="text" value="{{old('price')}}" name="price"class="form-control">
+             
             </div>
         </div>
+        
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Price:</strong>
-                <textarea class="form-control" style="height:150px" name="detail" placeholder="Detail"></textarea>
+              <label for="price">Quantity</label>
+               <input type="text" value="{{old('quantity')}}" name="quantity"class="form-control">
+             
             </div>
         </div>
+       
+       
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Quantity:</strong>
-                <textarea class="form-control" style="height:150px" name="detail" placeholder="Detail"></textarea>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Code:</strong>
-                <textarea class="form-control" style="height:150px" name="detail" placeholder="Detail"></textarea>
+              <label for="price">Code</label>
+               <input type="text" value="{{old('code')}}" name="code" class="form-control">
+             
             </div>
         </div>
 
