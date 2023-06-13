@@ -15,14 +15,17 @@ return new class extends Migration
           
             Schema::create('prescriptions', function (Blueprint $table) {  
                 $table->id();
-                $table->bigIncrements('id');
-                $table->bigInteger('doctor_id');
-                $table->foreign('doctor_id')->references('id')->on('users')->onDelete('cascade');
-                $table->bigInteger('patient_id');
-                $table->foreign('patient_id')->references('id')->on('patients')->onDelete('cascade');
-                $table->bigInteger('appointments_id');
-                $table->foreign('appointments_id')->references('id')->on('patients')->onDelete('cascade');
-                $table->char('medicine_issued',3)->default("NO");
+               // $table->bigIncrements('id');
+               // $table->bigInteger('doctor_id'); same as as above id
+               $table->foreignId('doctor_id')->constrained()->nullable();
+               // $table->foreign('doctor_id')->references('id')->on('users')->onDelete('cascade');
+                //$table->bigInteger('patient_id');
+                $table->foreignId('patients_id')->constrained()->nullable();
+               // $table->foreign('patient_id')->references('id')->on('patients')->onDelete('cascade');
+               // $table->bigInteger('appointments_id');
+               $table->foreignId('appointments_id')->constrained()->nullable();
+               // $table->foreign('appointments_id')->references('id')->on('patients')->onDelete('cascade');
+                $table->char('medicine_issued')->default("NO");
                 $table->json('bp')->nullable();
                 $table->json('cholestrol')->nullable();
                 $table->json('blood_sugar')->nullable();
