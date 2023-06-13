@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('appointments', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('patient_id')->constrained()->nullable();
+            $table->foreignId('patients_id')->constrained()->nullable();
             $table->integer('number');
-            $table->foreignId('doctor_id')->constrained()->nullable();
+            $table->foreignId('doctor_id')->constrand();//constrained()->nullable();
             $table->string('admit')->default('NO');
             $table->string('completed')->default('NO');
           
