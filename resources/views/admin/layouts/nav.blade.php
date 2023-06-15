@@ -94,6 +94,16 @@
               <span class="menu-title">Hod Information</span>
             </a>
           </li>
+
+
+
+
+          <li class="nav-item">
+            <a class="nav-link" href="{{route('patients.index')}}">
+              <i class="menu-icon mdi mdi-account-card-details "></i>
+              <span class="menu-title">Patients</span>
+            </a>
+          </li>
          
          
         </ul>

@@ -14,6 +14,8 @@ use App\Http\Controllers\Admin\IndexController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\patients\PatientsController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,6 +26,17 @@ use App\Http\Controllers\Admin\UserController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::prefix('patients')->group(function(){
+    Route::get('/names', [PatientsController::class,'index'])->name('patients.index');
+    Route::get('create', [PatientsController::class,'create'])->name('patients.create');
+    Route::post('store', [PatientsController::class,'store'])->name('patients.store');
+    Route::get('{id}', [PatientsController::class,'show'])->name('patients.show');
+    Route::get('{id}/edit', [PatientsController::class,'edit'])->name('patients.edit');
+    Route::put('{id}', [PatientsController::class,'update'])->name('patients.update');
+    Route::delete('{id}', [PatientsController::class,'destroy'])->name('patients.destroy');
+});
+
 Route::middleware(['auth', 'role:admin'])->name('admin.')->prefix('admin')->group(function () {
     Route::get('/', [IndexController::class, 'index'])->name('index');
     Route::resource('/roles', RoleController::class);
@@ -63,13 +76,8 @@ Route::middleware([
 });
 
 
-
-
-
-
-
-
 Route::resource('hods', HodController::class);
 Route::resource('departments', DepartmentsController::class);
 Route::resource('blocks', BlocksController::class);
+
 
