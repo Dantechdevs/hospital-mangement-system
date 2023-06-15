@@ -54,9 +54,6 @@ Route::middleware(['auth', 'role:admin'])->name('admin.')->prefix('admin')->grou
     Route::delete('/users/{user}/permissions/{permission}', [UserController::class, 'revokePermission'])->name('users.permissions.revoke');
 });
 
-
-
-
 Route::resource('doctors', DoctorController::class);
 Route::resource('nurses',NursesController::class);
 Route::resource('medicines',MedicineController::class);
@@ -76,8 +73,6 @@ Route::middleware([
 });
 
 
-Route::resource('hods', HodController::class);
-Route::resource('departments', DepartmentsController::class);
-Route::resource('blocks', BlocksController::class);
+
 
 
