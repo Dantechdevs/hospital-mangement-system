@@ -14,6 +14,8 @@ use App\Http\Controllers\Admin\IndexController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\PrescriptionController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -47,6 +49,7 @@ Route::middleware(['auth', 'role:admin'])->name('admin.')->prefix('admin')->grou
 Route::resource('doctors', DoctorController::class);
 Route::resource('nurses',NursesController::class);
 Route::resource('medicines',MedicineController::class);
+Route::resource('prescriptions',PrescriptionController::class);
 
 Route::get('/', function () {
     return view('welcome');
