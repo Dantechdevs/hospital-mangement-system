@@ -5,7 +5,6 @@ use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\MedicineController;
 use App\Http\Controllers\NursesController;
 use Illuminate\Support\Facades\Route;
-
 use App\Http\Controllers\block\BlocksController;
 use App\Http\Controllers\departments\DepartmentsController;
 use App\Http\Controllers\hod\HodController;
@@ -14,7 +13,14 @@ use App\Http\Controllers\Admin\IndexController;
 use App\Http\Controllers\Admin\PermissionController;
 use App\Http\Controllers\Admin\RoleController;
 use App\Http\Controllers\Admin\UserController;
+
+
+
+
+use App\Http\Controllers\patients\PatientsController;
+
 use App\Http\Controllers\PrescriptionController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -26,6 +32,17 @@ use App\Http\Controllers\PrescriptionController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+Route::prefix('patients')->group(function(){
+    Route::get('/names', [PatientsController::class,'index'])->name('patients.index');
+    Route::get('create', [PatientsController::class,'create'])->name('patients.create');
+    Route::post('store', [PatientsController::class,'store'])->name('patients.store');
+    Route::get('{id}', [PatientsController::class,'show'])->name('patients.show');
+    Route::get('{id}/edit', [PatientsController::class,'edit'])->name('patients.edit');
+    Route::put('{id}', [PatientsController::class,'update'])->name('patients.update');
+    Route::delete('{id}', [PatientsController::class,'destroy'])->name('patients.destroy');
+});
+
 Route::middleware(['auth', 'role:admin'])->name('admin.')->prefix('admin')->group(function () {
     Route::get('/', [IndexController::class, 'index'])->name('index');
     Route::resource('/roles', RoleController::class);
@@ -42,9 +59,6 @@ Route::middleware(['auth', 'role:admin'])->name('admin.')->prefix('admin')->grou
     Route::post('/users/{user}/permissions', [UserController::class, 'givePermission'])->name('users.permissions');
     Route::delete('/users/{user}/permissions/{permission}', [UserController::class, 'revokePermission'])->name('users.permissions.revoke');
 });
-
-
-
 
 Route::resource('doctors', DoctorController::class);
 Route::resource('nurses',NursesController::class);
@@ -68,11 +82,4 @@ Route::middleware([
 
 
 
-
-
-
-
-Route::resource('hods', HodController::class);
-Route::resource('departments', DepartmentsController::class);
-Route::resource('blocks', BlocksController::class);
 
