@@ -5,7 +5,6 @@ use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\MedicineController;
 use App\Http\Controllers\NursesController;
 use Illuminate\Support\Facades\Route;
-
 use App\Http\Controllers\block\BlocksController;
 use App\Http\Controllers\departments\DepartmentsController;
 use App\Http\Controllers\hod\HodController;
