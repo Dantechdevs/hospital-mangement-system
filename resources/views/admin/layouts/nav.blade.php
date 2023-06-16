@@ -66,6 +66,14 @@
           </a>
         </li>
 
+        <li class="nav-item">
+            
+          <a class="nav-link" href="{{route('prescriptions.index')}}">
+          <i class="mdi mdi-grid-large menu-icon"></i>
+          
+          <span class="menu-title">Prescription Details</span>
+        </a>
+      </li>
          
             
         
